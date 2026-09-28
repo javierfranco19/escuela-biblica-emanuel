@@ -17,7 +17,7 @@ function pesos(aula){return aula==="Primer Nivel B"?{ex:75,ta:25}:{ex:80,ta:20}}
 function calc(e){let p=pesos(e.aula),t=Math.max(0,Math.min(p.ta,+e.tarea||0)),xs=e.examenes.map(x=>Math.max(0,Math.min(100,+x||0))),avg=xs.reduce((a,b)=>a+b,0)/xs.length,xw=avg*(p.ex/100);return{t,xs,avg,xw,total:t+xw,p}}
 function reconocimiento(total){
   if(total>=95)return `<div class="honor excelencia"><div class="icon">🏆</div><div class="title">EXCELENCIA ACADÉMICA</div><p class="msg">Reconocimiento por su destacado rendimiento académico.</p><div class="score">Nota final: ${total.toFixed(2)}/100</div><div style="margin-top:8px;font-weight:700">✦ ¡Felicitaciones por tu excelente desempeño! ✦</div></div>`;
-  if(total>=90)return `<div class="honor alto"><div class="icon">🥇</div><div class="title">ALTO RENDIMIENTO</div><p class="msg">Reconocimiento por su excelente desempeño académico.</p><div class="score">Nota final: ${total.toFixed(2)}/100</div><div style="margin-top:8px;font-weight:700">¡Felicitaciones, sigue adelante!</div></div>`;
+  if(total>=90)return `<div class="honor alto"><div class="icon">🥇</div><div class="title">SOBRESALIENTE</div><p class="msg">Reconocimiento por su excelente desempeño académico.</p><div class="score">Nota final: ${total.toFixed(2)}/100</div><div style="margin-top:8px;font-weight:700">¡Felicitaciones, sigue adelante!</div></div>`;
   return "";
 }
 function login(){sv.classList.add("hidden");lv.classList.remove("hidden");setTimeout(()=>email.focus(),50)}
